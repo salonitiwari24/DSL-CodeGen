@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DSL-CodeGen Design System - Developer-focused dark theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 13% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 13% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 14%;
+    --ring: 200 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom DSL-CodeGen tokens */
+    --code-editor-bg: 220 13% 12%;
+    --terminal-green: 142 76% 36%;
+    --electric-blue: 200 100% 60%;
+    --warning-orange: 38 92% 50%;
+    --syntax-purple: 270 95% 75%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-code: linear-gradient(180deg, hsl(var(--code-editor-bg)), hsl(var(--background)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 13% 12%) 50%, hsl(var(--background)) 100%);
+    
+    /* Shadows */
+    --shadow-code: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme inherits from root - we're dark by default */
+    --background: 220 13% 6%;
+    --card: 220 13% 8%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
